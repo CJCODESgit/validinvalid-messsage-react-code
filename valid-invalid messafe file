@@ -1,0 +1,47 @@
+import React from 'react';
+
+
+
+import './styles.css';
+
+
+
+// don't change the Component name "App"
+
+export default function App() {
+
+const [message, setMessage] = React.useState('Invalid message');
+
+
+
+const messageChangeHandler = event =>{
+
+if (event.target.value.trim().length < 3){
+
+setMessage('Invalid message');
+
+} else {
+
+setMessage('Valid message');
+
+};
+
+};
+
+
+
+return (
+
+<form>
+
+<label>Your message</label>
+
+<input type="text" onChange={messageChangeHandler} />
+
+<p>{message}</p>
+
+</form>
+
+);
+
+}
